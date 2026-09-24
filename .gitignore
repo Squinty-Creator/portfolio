@@ -4,3 +4,6 @@ dist/
 .vercel/
 .env*
 .claude/
+
+.vercel
+.env*
