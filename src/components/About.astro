@@ -1,0 +1,26 @@
+---
+// Section 2 — About. DRAFT copy, pending Ethan's approval.
+const traits = ['Relentless', 'Unconventional', 'Two moves ahead'];
+---
+
+<section class="section" id="about">
+  <p class="section-label">About</p>
+  <h2>From business to building.</h2>
+  <p class="copy">
+    I came to data from the business side, not computer science, so I start with how the work
+    actually gets done. My instinct is to find exactly where a process breaks down, then build what
+    fixes it. I raised $500K for a startup that never launched, and today I'm on the founding team
+    of PutHouse, which has 120+ paying users. My work sits in the space between an undefined
+    question and a tool a few hundred people rely on.
+  </p>
+  <ul class="pills">
+    {traits.map((t) => <li class="pill">{t}</li>)}
+  </ul>
+</section>
+
+<style>
+  .copy {
+    max-width: 62ch;
+    margin: 0 0 2rem;
+  }
+</style>

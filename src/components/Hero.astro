@@ -1,0 +1,135 @@
+---
+// Section 1 — Hero. Copy is locked; don't rewrite.
+const stats = [
+  { value: '500+', label: 'employees using my QBR agent data layer' },
+  { value: '+$1M', label: 'sales opportunity surfaced' },
+  { value: '86%', label: 'review time cut' },
+];
+---
+
+<section class="hero section" id="top">
+  <div class="intro">
+    <img
+      class="headshot"
+      src="/headshot.png"
+      alt="Ethan Vernon"
+      width="176"
+      height="176"
+      fetchpriority="high"
+    />
+    <div>
+      <h1>Ethan Vernon</h1>
+      <p class="tagline">Relentless, unconventional, two moves ahead. Data &amp; AI Analyst.</p>
+      <a class="cta" href="https://linkedin.com/in/ethanvern" target="_blank" rel="noopener">
+        Let's talk →
+      </a>
+    </div>
+  </div>
+
+  <ul class="stats">
+    {
+      stats.map((s) => (
+        <li>
+          <span class="value">{s.value}</span>
+          <span class="label">{s.label}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .hero {
+    padding-top: 3.5rem;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .headshot {
+    width: 8.5rem;
+    height: 8.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--accent);
+    padding: 4px;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 12vw, 4.75rem);
+  }
+
+  .tagline {
+    font-size: clamp(1.125rem, 4.5vw, 1.375rem);
+    font-weight: 300;
+    color: var(--body);
+    max-width: 30ch;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .cta {
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .cta:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  .stats {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .stats li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--accent);
+  }
+
+  .value {
+    color: var(--name);
+    font-size: 2.25rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .label {
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 40rem) {
+    .intro {
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .headshot {
+      width: 11rem;
+      height: 11rem;
+      flex-shrink: 0;
+    }
+
+    .stats {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 4rem;
+    }
+  }
+</style>

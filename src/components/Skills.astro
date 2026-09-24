@@ -1,0 +1,131 @@
+---
+// Section 3 — Skills. Aimed at Data / AI Analyst roles at enterprise companies.
+const hard = [
+  { group: 'Data', items: ['SQL', 'Python', 'Databricks'] },
+  {
+    group: 'AI',
+    tools: [
+      { name: 'Claude Code', use: 'agents, workflow automation, SQL & Python' },
+      { name: 'Microsoft Copilot', use: 'meeting recaps & drafting' },
+    ],
+  },
+  { group: 'Systems', items: ['Salesforce', 'VS Code'] },
+];
+
+const soft = [
+  'Turning business questions into data answers',
+  'Asking the questions others skip',
+  'Learning fast',
+  'Finding where a process breaks',
+];
+---
+
+<section class="section" id="skills">
+  <p class="section-label">Skills</p>
+  <h2>What I bring.</h2>
+  <div class="grid">
+    <div class="col">
+      <h3>Hard Skills</h3>
+      {
+        hard.map((g) => (
+          <div class="group">
+            <p class="group-name">{g.group}</p>
+            {g.items && (
+              <ul class="pills">
+                {g.items.map((i) => (
+                  <li class="pill">{i}</li>
+                ))}
+              </ul>
+            )}
+            {g.tools && (
+              <ul class="tools">
+                {g.tools.map((t) => (
+                  <li>
+                    <span class="tool">{t.name}</span>
+                    <span class="use">{t.use}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="col">
+      <h3>Soft Skills</h3>
+      <ul class="soft">
+        {soft.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .col {
+    background: var(--bg-raised);
+    border-top: 1px solid var(--accent);
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+  }
+
+  .group + .group {
+    margin-top: 1.25rem;
+  }
+
+  .group-name {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+
+  .tools,
+  .soft {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .tools li {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  .tool {
+    color: var(--name);
+  }
+
+  .use {
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .soft li {
+    color: var(--name);
+    padding-left: 1rem;
+    border-left: 1px solid var(--accent);
+    line-height: 1.4;
+  }
+
+  @media (min-width: 40rem) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
